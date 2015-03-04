@@ -45,7 +45,7 @@ mp→← {B = B} a a→b = pip helper
 
 -- Modus pones by contradiction (simplified proof).
 mp→←' : {A B : Set} → A → (A → B) → B
-mp→←' {B = B} a a→b = pip (λ h → h (a→b a))
+mp→←' a a→b = pip (λ h → h (a→b a))
 
 ------------------------------------------------------------------------------
 -- References
