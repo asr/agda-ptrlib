@@ -28,6 +28,11 @@ ppi→← {A} = pip helper
   where helper : ¬ (A → A) → ⊥
         helper h = h (λ a → a)
 
+-- The propositional principle of identity `p → p` [da Costa and de
+-- Ronde 2014] by contradiction (simplified proof).
+ppi→←' : {A : Set} → A → A
+ppi→←' = pip (λ h → h (λ a → a))
+
 -- Modus pones.
 mp : {A B : Set} → A → (A → B) → B
 mp a a→b = a→b a
