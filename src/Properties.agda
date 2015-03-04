@@ -13,8 +13,8 @@ open import Base
 
 ------------------------------------------------------------------------------
 -- The principle of indirect proof (proof by contradiction).
-¬-elim : {A : Set} → (¬ A → ⊥) → A
-¬-elim h = case (λ a → a) (λ ¬a → ⊥-elim (h ¬a)) pem
+pip : {A : Set} → (¬ A → ⊥) → A
+pip h = case (λ a → a) (λ ¬a → ⊥-elim (h ¬a)) pem
 
 -- The propositional principle of identity `p → p` [da Costa and de
 -- Ronde 2014].
@@ -24,7 +24,7 @@ ppi a = a
 -- The propositional principle of identity `p → p` [da Costa and de
 -- Ronde 2014] by contradiction.
 ppi→← : {A : Set} → A → A
-ppi→← {A} = ¬-elim helper
+ppi→← {A} = pip helper
   where helper : ¬ (A → A) → ⊥
         helper h = h (λ a → a)
 
