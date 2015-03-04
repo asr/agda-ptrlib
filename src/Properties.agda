@@ -28,6 +28,20 @@ ppi→← {A} = pip helper
   where helper : ¬ (A → A) → ⊥
         helper h = h (λ a → a)
 
+-- Modus pones.
+mp : {A B : Set} → A → (A → B) → B
+mp a a→b = a→b a
+
+-- Modus pones by contradiction.
+mp→← : {A B : Set} → A → (A → B) → B
+mp→← {B = B} a a→b = pip helper
+  where helper : ¬ B → ⊥
+        helper h = h (a→b a)
+
+-- Modus pones by contradiction (simplified proof).
+mp→←' : {A B : Set} → A → (A → B) → B
+mp→←' {B = B} a a→b = pip (λ h → h (a→b a))
+
 ------------------------------------------------------------------------------
 -- References
 
