@@ -29,6 +29,7 @@ ppi→← {A} = ¬-elim helper
         helper h = h (λ a → a)
 
 ------------------------------------------------------------------------------
+-- References
 
 -- da Costa, N.C.A. and de Ronde, C. (2014). Non-reflexive Logical
 -- Foundation for Quantum Mechanics. Foundations of Physics 44.12,
